@@ -6,3 +6,5 @@
 ## 5. Use of usestate to rerender the updated DOM tree through the Window tree.
 ## 6. Read documentation of "React Fiber Architecture" 
         link: https://github.com/acdlite/react-fiber-architecture
+## 7. Tailwind Props and working on card.        
+## 8.project of background changer
