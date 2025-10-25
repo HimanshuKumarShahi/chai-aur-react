@@ -30,23 +30,24 @@ function App() {
       <div className='classname="flex shadow rounded-lg overflow-hidden mb-4'>
     <input type="text"
     value={setpassword}
-    className='outline-none w-full py-1 px-3'
+    className='outline-none w-full py-1 px-3  bg-white'
     placeholder="Password"
     readOnly
     />
-    <button className='outline-none bg-blue-900 text-black px-4 py-0.5 shrink rounded-2xl'>Copy</button>
+    <button className='outline-none bg-blue-900 text-black px-4 py-0.5 shrink rounded-2xl cursor-p'>Copy</button>
       </div>
     <div className='flex text-sm gap-x-2'>
       <div className='flex items-center gap-x-1'>
         <input type="range" 
-        min={8}
+        min={6}
         max={100}
         value={length}
         className='cursor-pointer'
         onChange={(e)=>{setlength(e.target.value)}}
         />
-        <label >Length: {length}</label>
+        <label className='text-xl' >Length: {length}</label>
       </div>
+
       <div className='flex items-center gap-x-1'>
         <input type="checkbox" 
         defaultChecked={addnumber}
@@ -57,15 +58,17 @@ function App() {
         />
       <label htmlFor="numberInput">Numbers</label>
       </div>
+
+
       <div className='flex items-center gap-x-1'>
         <input type="checkbox" 
-        defaultChecked={addnumber}
-        id='number input'
+        defaultChecked={addchar}
+        id='string input'
         onChange={()=>{
           setaddnumberAllowed((prev)=>!prev);
         }}
         />
-      <label htmlFor="numberInput">Numbers</label>
+      <label htmlFor="String input">characters</label>
       </div>
     </div>
 
