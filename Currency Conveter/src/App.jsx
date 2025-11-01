@@ -3,7 +3,7 @@ import './App.css';
 import useCurrencyInfo from './hooks/usecurrency';
 
 function App() {
-  const [amount, setAmount] = useState();
+  const [amount, setAmount] = useState(0);
   const [from, setFrom] = useState('usd');
   const [to, setTo] = useState('inr');
   const [convertedAmount, setConvertedAmount] = useState(0);
@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     if (currencyInfo && currencyInfo[to]) {
-      setConvertedAmount((amount * currencyInfo[to]).toFixed(4));
+      setConvertedAmount((amount * currencyInfo[to]).toFixed(2));
     }
   }, [amount, from, to, currencyInfo]);
 
