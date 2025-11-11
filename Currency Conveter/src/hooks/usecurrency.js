@@ -8,7 +8,7 @@ function useCurrencyinfo(currency){
         .then((res)=>setdata(res[currency]))
         
     },[currency])
-    return data;
+    return data; 
 }
 
 export default useCurrencyinfo;
