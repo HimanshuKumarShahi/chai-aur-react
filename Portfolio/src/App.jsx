@@ -1,19 +1,26 @@
 import { useState } from 'react'
 import './App.css'
-import {Link} from 'react-router-dom'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import Home from './components/Home'
-import Footer from './components/footer'; 
+import Home from './components/Home/Home.jsx'
+import Footer from './components/Footer/footer.jsx'; 
+import Navbar from './components/Navbar/Navbar.jsx'
+import About from './components/About/About.jsx';
 
 
 function App() {
   return (
+    <>
+    
     <BrowserRouter>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/t" element={<Footer/>} />
+        <Route path="/about" element={<About/>} />
       </Routes>
+    <Footer/>
     </BrowserRouter>
+
+    </>
   );
 }
 
