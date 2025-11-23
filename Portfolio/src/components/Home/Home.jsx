@@ -2,70 +2,37 @@ import React from "react";
 
 function Home() {
   return (
-    <section className="min-h-[calc(100vh-120px)] bg-gray-100 flex justify-center px-4 py-10">
-      <div className="w-full max-w-4xl bg-white rounded-xl shadow-xl overflow-hidden">
+    <div className="min-h-screen flex flex-col justify-center items-center px-4 pt-28 pb-24 relative overflow-hidden bg-black">
 
-        {/* Banner */}
-        <div className="h-40 md:h-52  from-blue-500 to-blue-700 relative">
-          
-          {/* Profile Image */}
-          <img
-            src="/your-photo.png"
-            alt="Himanshu"
-            className="
-              absolute 
-              -bottom-12 
-              left-6 
-              w-28 h-28 
-              md:w-36 md:h-36 
-              rounded-full 
-              border-4 
-              border-white 
-              shadow-xl
-            "
-          />
-        </div>
 
-        {/* Profile Info */}
-        <div className="px-6 mt-16 pb-8">
+      <div className="relative z-20 text-center max-w-3xl">
+        <p className="text-gray-300 text-sm tracking-widest">
+          Welcome to my universe
+        </p>
 
-          <h1 className="text-3xl md:text-4xl font-bold">Himanshu Shahi</h1>
-          <p className="text-gray-700 text-sm md:text-base mt-1">
-            Full Stack Developer | BCA Student | Defence Aspirant
-          </p>
+        <h1 className="text-white text-4xl md:text-6xl font-extrabold mt-2 leading-tight">
+          I’m <span className="text-yellow-400">Himanshu</span>,
+          <br />
+          <span className="text-gray-200">BCA Student & Tech Explorer</span>
+        </h1>
 
-          <p className="text-gray-500 text-sm mt-2">
-            I blend logic with creativity to build clean UI, modern web apps, and smooth backend systems.
-          </p>
+        <p className="text-gray-400 mt-4 text-lg">
+          Coding, learning, and stepping fearlessly into the future like light entering space.
+        </p>
 
-          {/* Stats / links */}
-          <div className="flex flex-wrap gap-6 mt-5 text-sm md:text-base">
-            <span className="text-blue-600 font-semibold cursor-pointer">
-              120 connections
-            </span>
+        <div className="mt-8 flex justify-center gap-4">
+          <button className="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full shadow-lg hover:bg-yellow-400 transition">
+            Explore Work
+          </button>
 
-            <a 
-              href="mailto:#" 
-              className="text-gray-700 hover:text-blue-600"
-            >
-              Contact Info
-            </a>
-          </div>
-
-          {/* Featured buttons */}
-          <div className="flex flex-wrap gap-4 mt-6">
-            <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-              Open to Work
-            </button>
-
-            <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 transition">
-              Add Section
-            </button>
-          </div>
-
+          <button className="px-6 py-3 border border-yellow-500 text-yellow-400 font-semibold rounded-full hover:bg-yellow-500 hover:text-black transition">
+            Contact Me
+          </button>
         </div>
       </div>
-    </section>
+
+      
+    </div>
   );
 }
 

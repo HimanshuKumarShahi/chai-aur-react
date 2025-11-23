@@ -1,1 +1,27 @@
 @import "tailwindcss";
+@keyframes skelMove {
+  0% { transform: translateY(-20%); }
+  100% { transform: translateY(20%); }
+}
+
+@keyframes skelMove2 {
+  0% { transform: translateY(20%); }
+  100% { transform: translateY(-20%); }
+}
+
+@keyframes skelMove3 {
+  0% { transform: translateY(-15%); }
+  100% { transform: translateY(15%); }
+}
+
+.animate-skelMove {
+  animation: skelMove 6s ease-in-out infinite alternate;
+}
+
+.animate-skelMove2 {
+  animation: skelMove2 7s ease-in-out infinite alternate;
+}
+
+.animate-skelMove3 {
+  animation: skelMove3 5s ease-in-out infinite alternate;
+}
