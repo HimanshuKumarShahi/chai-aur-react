@@ -1,8 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (isOpen && menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
 
   const closeMenu = () => setIsOpen(false);
 
@@ -15,7 +28,6 @@ function Navbar() {
     ">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         
-        {/* Logo */}
         <Link 
           to="/" 
           onClick={closeMenu}
@@ -24,40 +36,17 @@ function Navbar() {
           Himanshu Portfolio
         </Link>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex gap-8">
-          <Link
-            to="/"
-            className="font-semibold text-white transition-all duration-200 ease-in-out hover:text-orange-500 transform hover:scale-125"
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="font-semibold text-white transition-all duration-200 ease-in-out hover:text-orange-500 transform hover:scale-125"
-          >
-            About
-          </Link>
-          <Link
-            to="/projects"
-            className="font-semibold text-white transition-all duration-200 ease-in-out hover:text-orange-500 transform hover:scale-125"
-          >
-            Projects
-          </Link>
-          <Link
-            to="/contact"
-            className="font-semibold text-white transition-all duration-200 ease-in-out hover:text-orange-500 transform hover:scale-125"
-          >
-            Contact-Us
-          </Link>
+          <Link to="/" className="font-semibold text-white hover:text-orange-500 transform hover:scale-125">Home</Link>
+          <Link to="/about" className="font-semibold text-white hover:text-orange-500 transform hover:scale-125">About</Link>
+          <Link to="/projects" className="font-semibold text-white hover:text-orange-500 transform hover:scale-125">Projects</Link>
+          <Link to="/contact" className="font-semibold text-white hover:text-orange-500 transform hover:scale-125">Contact-Us</Link>
         </div>
 
-        {/* Mobile Toggle */}
         <div className="md:hidden">
           <button 
             onClick={() => setIsOpen(!isOpen)} 
             className="focus:outline-none text-white"
-            aria-label="Toggle Menu"
           >
             {isOpen ? (
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,29 +65,24 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="
-          md:hidden 
-          bg-black/40 backdrop-blur-xl 
-          shadow-lg border-t border-white/10 
-          flex flex-col 
-          items-center 
-          gap-4 
-          px-6 py-6 
-          rounded-b-xl 
-          animate-slideDown
-        ">
-          <Link onClick={closeMenu} to="/" className="text-white text-lg font-medium hover:text-orange-400">
-            Home
-          </Link>
-          <Link onClick={closeMenu} to="/about" className="text-white text-lg font-medium hover:text-orange-400">
-            About
-          </Link>
-          <Link onClick={closeMenu} to="/projects" className="text-white text-lg font-medium hover:text-orange-400">
-            Projects
-          </Link>
-          <Link onClick={closeMenu} to="/contact" className="text-white text-lg font-medium hover:text-orange-400">
-            Contact-Us
-          </Link>
+        <div
+          ref={menuRef}
+          className="
+            md:hidden 
+            bg-black/40 backdrop-blur-xl 
+            shadow-lg border-t border-white/10 
+            flex flex-col 
+            items-center 
+            gap-4 
+            px-6 py-6 
+            rounded-b-xl 
+            animate-slideDown
+          "
+        >
+          <Link onClick={closeMenu} to="/" className="text-white text-lg font-medium hover:text-orange-400">Home</Link>
+          <Link onClick={closeMenu} to="/about" className="text-white text-lg font-medium hover:text-orange-400">About</Link>
+          <Link onClick={closeMenu} to="/projects" className="text-white text-lg font-medium hover:text-orange-400">Projects</Link>
+          <Link onClick={closeMenu} to="/contact" className="text-white text-lg font-medium hover:text-orange-400">Contact-Us</Link>
         </div>
       )}
     </nav>

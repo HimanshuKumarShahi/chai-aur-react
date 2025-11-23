@@ -3,21 +3,21 @@ import React from 'react';
 function Footer() {
   return (
     <footer className="
-      bg-black/40 
+      bg-black 
       backdrop-blur-xl 
-      border-t border-white/10 
+      border-t border-white/10
       text-white 
-      py-8 
-      mt-16
+      py-4
     ">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        {/* Links */}
-        <div className="mt-2 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
+
+        {/* Links row (always in row, even on small screens) */}
+        <div className="flex flex-row justify-center items-center gap-6">
           <a 
             href="https://github.com/HimanshuKumarShahi" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="font-semibold text-white transition-all duration-200 ease-in-out hover:text-orange-500 transform hover:scale-125"
+            className="font-semibold transition-all duration-300 hover:text-orange-500 hover:scale-110"
           >
             GitHub
           </a>
@@ -26,20 +26,21 @@ function Footer() {
             href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="font-semibold text-white transition-all duration-200 ease-in-out hover:text-orange-500 transform hover:scale-125"
+            className="font-semibold transition-all duration-300 hover:text-orange-500 hover:scale-110"
           >
             LinkedIn
           </a>
 
           <a 
             href="mailto:#" 
-            className="font-semibold text-white transition-all duration-200 ease-in-out hover:text-orange-500 transform hover:scale-125"
+            className="font-semibold transition-all duration-300 hover:text-orange-500 hover:scale-110"
           >
             Contact-Us
           </a>
         </div>
 
-        <p className="text-sm text-black mt-2">
+        {/* Copyright */}
+        <p className="text-sm text-gray-400 mt-3 text-center">
           © {new Date().getFullYear()} HIMANSHU KUMAR SHAHI. Created with 💖😎
         </p>
       </div>

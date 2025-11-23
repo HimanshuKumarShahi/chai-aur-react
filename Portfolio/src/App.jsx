@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar.jsx'
 import About from './components/About/About.jsx';
 
 
+
 function App() {
   return (
     <>
