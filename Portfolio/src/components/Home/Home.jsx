@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 function Home() {
   return (
@@ -53,7 +54,7 @@ function Home() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-6">
             {/* First Button */}
-            <button
+            <button 
               className="
     px-6 py-3 
     bg-orange-500 
@@ -70,8 +71,7 @@ function Home() {
     cursor-pointer
     focus:outline-none
     
-  "
-            >
+  ">
               Explore Work
             </button>
 
@@ -122,7 +122,7 @@ function Home() {
     </h2>
 
     <p className="text-gray-300 text-lg leading-relaxed max-w-3xl">
-      I'm a BCA student with a strong passion for development and discipline like a defence aspirant.
+      I'm a BCA student with a strong passion for development and discipline .
       I mix logic with creativity and build digital experiences that are fast, sharp, and meaningful.
       I focus on writing clean code, designing smooth UI, and solving real-world problems.
     </p>
@@ -150,52 +150,149 @@ function Home() {
 
 
 {/* SKILLS GRID SECTION */}
-<section className="w-full bg-black py-20 px-6">
-  <div className="max-w-6xl mx-auto">
 
-    <h2 className="text-4xl font-bold text-orange-500 mb-10">
-      My Skills
-    </h2>
+<section style={{ padding: "50px 20px" }}>
+  <h2
+    style={{
+      color: "orange",
+      marginBottom: "30px",
+      fontSize: "32px",
+      fontWeight: "bold",
+      textAlign: "center",
+    }}
+  >
+    My Skills
+  </h2>
 
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+  {(() => {
+    const [showAll, setShowAll] = useState(false);
 
-      {[
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React.js",
-        "Tailwind CSS",
-        "Node.js (Basics)",
-        "Express (Basics)",
-        "C Programming",
-        "C++",
-        "DSA (Learning)",
-        "MongoDB (Basics)",
-        "Git & GitHub"
-      ].map((item) => (
-        <div 
-          key={item}
-          className="
-            border border-orange-400 
-            bg-black/30 
-            rounded-xl 
-            p-4 text-center 
-            text-white 
-            font-semibold 
-            hover:bg-orange-500 
-            hover:text-black 
-            transition-all 
-            cursor-pointer
-            shadow-[0_0_15px_rgba(255,90,0,0.3)]
-          "
+    const skills = [
+      { name: "JavaScript", level: 75 },
+      { name: "React", level: 76 },
+      { name: "Python", level: 65 },
+      { name: "Java", level: 60 },
+      { name: "Node.js", level: 65 },
+      { name: "SQL", level: 60 },
+      { name: "HTML", level: 58 },
+      { name: "CSS", level: 49 },
+      { name: "C++", level: 55 },
+      { name: "MongoDB", level: 50 },
+    ];
+
+    // show only first 4 unless expanded
+    const visible = showAll ? skills : skills.slice(0, 4);
+
+    return (
+      <>
+        {/* GRID */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "25px",
+            width: "100%",
+            maxWidth: "1100px",
+            margin: "0 auto",
+          }}
         >
-          {item}
-        </div>
-      ))}
+          {visible.map((skill) => (
+            <div
+              key={skill.name}
+              style={{
+                border: "2px solid orange",
+                borderRadius: "12px",
+                height: "200px",
+                position: "relative",
+                overflow: "hidden",
+                background: "rgba(0,0,0,0.5)",
+                backdropFilter: "blur(6px)",
+                boxShadow: "0 0 15px rgba(255,165,0,0.2)",
+              }}
+            >
+              {/* Skill Name */}
+              <div
+                style={{
+                  textAlign: "center",
+                  color: "white",
+                  fontSize: "18px",
+                  fontWeight: "bold",
+                  paddingTop: "10px",
+                }}
+              >
+                {skill.name}
+              </div>
 
-    </div>
-  </div>
+              {/* Fill */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  width: "100%",
+                  height: `${skill.level}%`,
+                  background: "orange",
+                  transition: "height 1s ease",
+                  opacity: 0.9,
+                }}
+              />
+
+              {/* Percentage */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "10px",
+                  width: "100%",
+                  textAlign: "center",
+                  color: "black",
+                  fontWeight: "bold",
+                  zIndex: 10,
+                  fontSize: "18px",
+                }}
+              >
+                {skill.level}%
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* SHOW MORE BUTTON */}
+        <div style={{ marginTop: "25px", textAlign: "center" }}>
+          <button
+            onClick={() => setShowAll(!showAll)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px",
+              background: "rgba(255,255,255,0.08)",
+              border: "1px solid orange",
+              padding: "12px 25px",
+              borderRadius: "12px",
+              cursor: "pointer",
+              color: "white",
+              fontSize: "16px",
+              fontWeight: "bold",
+              backdropFilter: "blur(10px)",
+              transition: "0.3s",
+              margin: "0 auto",
+            }}
+          >
+            <span
+              style={{
+                transform: showAll ? "rotate(180deg)" : "rotate(0deg)",
+                transition: "0.3s",
+              }}
+            >
+              ▼
+            </span>
+            {showAll ? "Show Less" : "Show More"}
+          </button>
+        </div>
+      </>
+    );
+  })()}
 </section>
+
 
 
     </div>
