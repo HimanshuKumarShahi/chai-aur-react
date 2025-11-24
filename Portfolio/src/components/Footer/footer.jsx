@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -11,30 +12,31 @@ function Footer() {
     ">
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
 
-        {/* Links row (always in row, even on small screens) */}
-        <div className="flex flex-row justify-center items-center gap-6">
+        {/* Links row with icons */}
+        <div className="flex flex-row justify-center items-center gap-8">
           <a 
             href="https://github.com/HimanshuKumarShahi" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="font-semibold transition-all duration-300 hover:text-orange-500 hover:scale-110"
+            className="flex items-center gap-2 font-semibold transition-all duration-300 hover:text-orange-500 hover:scale-110"
           >
+            <FaGithub size={22} />
             GitHub
           </a>
-
           <a 
-            href="#" 
+            href="https://linkedin.com/in/your-link" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="font-semibold transition-all duration-300 hover:text-orange-500 hover:scale-110"
+            className="flex items-center gap-2 font-semibold transition-all duration-300 hover:text-orange-500 hover:scale-110"
           >
+            <FaLinkedin size={22} />
             LinkedIn
           </a>
-
           <a 
-            href="mailto:#" 
-            className="font-semibold transition-all duration-300 hover:text-orange-500 hover:scale-110"
+            href="mailto:your@email.com"
+            className="flex items-center gap-2 font-semibold transition-all duration-300 hover:text-orange-500 hover:scale-110"
           >
+            <FaEnvelope size={22} />
             Contact-Us
           </a>
         </div>

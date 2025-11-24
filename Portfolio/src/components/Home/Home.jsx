@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
+
 
 function Home() {
   return (
@@ -21,10 +23,13 @@ function Home() {
       {/* Decorative Boxes & Lines */}
       {/* Top left box */}
       <div className="absolute top-20 left-10 w-24 h-24 border-2 border-orange-400/20 rounded-lg rotate-12 animate-pulse-slow z-10"></div>
+
+      <div className="absolute top-90 left-40 w-24 h-24 border-2 border-orange-600/20 rounded-lg rotate-12 animate-pulse-slow z-10"></div>
       {/* Bottom right box */}
       <div className="absolute bottom-28 right-10 w-20 h-20 border-2 border-cyan-400/20 rounded-2xl -rotate-12 animate-pulse-slow z-10"></div>
       {/* Middle left smaller box */}
       <div className="absolute top-1/2 left-4 w-16 h-16 border border-white/10 rounded-xl rotate-6 z-10"></div>
+      <div className="absolute top-1/2 left-50 w-20 h-20 border border-white/10 rounded-xl rotate-8 z-10"></div>
       {/* Floating thin rectangle */}
       <div className="absolute top-[35%] right-8 w-32 h-6 border border-pink-400/10 rounded-xl -rotate-6"></div>
       {/* Bottom middle wide box */}
@@ -52,67 +57,97 @@ function Home() {
             A learner walking boldly into the tech future — step by step, line
             by line.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-6">
-            {/* First Button */}
-            <button 
-              className="
-    px-6 py-3 
-    bg-orange-500 
-    text-black 
-    font-semibold 
-    rounded-full 
-    shadow-lg 
-    border-2 border-orange-500
-    transition-all duration-200 
-    hover:bg-black 
-    hover:text-yellow-400 
-    hover:border-yellow-400
-    hover:scale-110
-    cursor-pointer
-    focus:outline-none
-    
-  ">
-              Explore Work
-            </button>
+         
+        <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-6">
+  {/* "Explore Work" Button links to /projects */}
+  <Link 
+    to="/projects"
+    className="
+      px-6 py-3 
+      bg-orange-500 
+      text-black 
+      font-semibold 
+      rounded-full 
+      shadow-lg 
+      border-2 border-orange-500
+      transition-all duration-200 
+      hover:bg-black 
+      hover:text-yellow-400 
+      hover:border-yellow-400
+      hover:scale-110
+      cursor-pointer
+      focus:outline-none
+      flex items-center justify-center
+    "
+  >
+    Explore Work
+  </Link>
 
-            {/* Second Button */}
-            <button
-              className="
-    px-6 py-3 
-    bg-black 
-    text-yellow-400 
-    font-semibold 
-    rounded-full 
-    border-2 border-yellow-400 
-    transition-all duration-200 
-    hover:bg-orange-500 
-    hover:text-black 
-    hover:border-orange-500
-    hover:scale-110
-    cursor-pointer
-    focus:outline-none
-  "
-            >
-              Contact Me
-            </button>
-          </div>
+  {/* "Contact Me" Button links to /contact */}
+  <Link
+    to="/contact"
+    className="
+      px-6 py-3 
+      bg-black 
+      text-yellow-400 
+      font-semibold 
+      rounded-full 
+      border-2 border-yellow-400 
+      transition-all duration-200 
+      hover:bg-orange-500 
+      hover:text-black 
+      hover:border-orange-500
+      hover:scale-110
+      cursor-pointer
+      focus:outline-none
+      flex items-center justify-center
+    "
+  >
+    Contact Me
+  </Link>
+</div>
+
+
         </div>
         {/* IMAGE SECTION */}
-        <div className="flex-1 flex justify-center px-4 md:px-0">
+         <div className="flex-1 flex justify-center px-4 md:px-0">
           <div className="relative">
-            {/* Tilted outer frame */}
+            {/* Tilted outer frame and extra glow */}
             <div className="absolute inset-0 border-2 border-yellow-500/20 rounded-xl -rotate-6"></div>
-            {/* Extra floating glow */}
             <div className="absolute -top-4 -left-6 w-20 h-20 bg-yellow-400/20 blur-2xl rounded-full z-0 animate-pulse-slow"></div>
-            <img
-              src="/profile.jpeg"
-              alt="profile"
-              className="w-72 h-80 object-cover rounded-xl shadow-2xl relative z-10"
-            />
+            {/* Protected image wrapper */}
+            <div className="relative w-72 h-80">
+              <img
+                src="/profile.png"
+                alt="profile"
+                className="w-72 h-80 object-cover rounded-xl shadow-2xl relative z-10 pointer-events-none select-none"
+                draggable={false}
+                onContextMenu={e => e.preventDefault()}
+                style={{
+                  userSelect: "none",
+                  WebkitUserDrag: "none",
+                  WebkitUserSelect: "none",
+                  MozUserSelect: "none",
+                  msUserSelect: "none"
+                }}
+              />
+              {/* Transparent overlay to block mouse events */}
+              <div
+                className="absolute inset-0 z-20"
+                style={{
+                  background: "transparent",
+                  pointerEvents: "auto"
+                }}
+                onMouseDown={e => e.preventDefault()}
+                onDragStart={e => e.preventDefault()}
+                onContextMenu={e => e.preventDefault()}
+              />
+            </div>
           </div>
         </div>
       </div>
 
+      
     {/* WHY CHOOSE ME SECTION */}
 <section className="w-full bg-black text-white py-20 px-6">
   <div className="max-w-6xl mx-auto">
@@ -148,9 +183,6 @@ function Home() {
   </div>
 </section>
 
-
-{/* SKILLS GRID SECTION */}
-
 <section style={{ padding: "50px 20px" }}>
   <h2
     style={{
@@ -165,11 +197,11 @@ function Home() {
   </h2>
 
   {(() => {
-    const [showAll, setShowAll] = useState(false);
+    const [showAll, setShowAll] = React.useState(false);
 
     const skills = [
-      { name: "JavaScript", level: 75 },
       { name: "FullStack", level: 76 },
+      { name: "JavaScript", level: 75 },
       { name: "Python", level: 70 },
       { name: "MongoDB", level: 50 },
       { name: "Backend", level: 40 },
@@ -183,18 +215,17 @@ function Home() {
       { name: "C", level: 57 },
     ];
 
-    const visible = showAll ? skills : skills.slice(0, 5);
+    const visible = showAll ? skills : skills.slice(0, 4);
 
     return (
       <>
-        {/* GRID */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
             gap: "25px",
             width: "100%",
-            maxWidth: "1100px",
+            maxWidth: "900px",
             margin: "0 auto",
           }}
         >
@@ -202,53 +233,54 @@ function Home() {
             <div
               key={skill.name}
               style={{
-                border: "2px solid orange",
-                borderRadius: "12px",
-                height: "200px",
+                padding: "24px 18px",
+                borderRadius: "14px",
+                background: "rgba(0,0,0,0.55)",
+                boxShadow: "0 0 15px rgba(255,165,0,0.10)",
+                border: "1px solid orange",
                 position: "relative",
-                overflow: "hidden",
-                background: "rgba(0,0,0,0.5)",
-                backdropFilter: "blur(6px)",
-                boxShadow: "0 0 15px rgba(255,165,0,0.2)",
               }}
             >
               {/* Skill Name */}
               <div
                 style={{
-                  textAlign: "center",
                   color: "white",
-                  fontSize: "18px",
                   fontWeight: "bold",
-                  paddingTop: "10px",
+                  fontSize: "19px",
+                  marginBottom: "15px",
+                  textAlign: "left",
                 }}
               >
                 {skill.name}
               </div>
-
-              {/* Fill */}
+              {/* Progress Bar */}
               <div
                 style={{
-                  position: "absolute",
-                  bottom: 0,
                   width: "100%",
-                  height: `${skill.level}%`,
-                  background: "orange",
-                  transition: "height 1s ease",
-                  opacity: 0.9,
+                  height: "10px",
+                  background: "rgba(255,255,255,0.13)",
+                  borderRadius: "7px",
+                  overflow: "hidden",
+                  marginBottom: "8px",
                 }}
-              />
-
+              >
+                <div
+                  style={{
+                    width: `${skill.level}%`,
+                    height: "100%",
+                    background: "linear-gradient(90deg, orange, gold)",
+                    borderRadius: "7px",
+                    transition: "width 0.8s",
+                  }}
+                />
+              </div>
               {/* Percentage */}
               <div
                 style={{
-                  position: "absolute",
-                  bottom: "10px",
-                  width: "100%",
-                  textAlign: "center",
-                  color: "black",
+                  color: "orange",
+                  fontSize: "17px",
                   fontWeight: "bold",
-                  zIndex: 10,
-                  fontSize: "18px",
+                  textAlign: "right",
                 }}
               >
                 {skill.level}%
@@ -257,12 +289,12 @@ function Home() {
           ))}
         </div>
 
-        {/* SHOW MORE BUTTON */}
+        {/* Show More Button */}
         <div style={{ marginTop: "25px", textAlign: "center" }}>
           <button
             onClick={() => setShowAll(!showAll)}
             style={{
-              display: "flex",
+              display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
               gap: "10px",
@@ -294,7 +326,6 @@ function Home() {
     );
   })()}
 </section>
-
 
 
     </div>

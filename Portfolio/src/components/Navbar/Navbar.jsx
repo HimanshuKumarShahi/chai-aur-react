@@ -1,18 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaHome, FaUserAlt, FaFolderOpen, FaEnvelope } from 'react-icons/fa';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
 
-  // Close menu when clicking outside
   useEffect(() => {
     function handleClickOutside(e) {
       if (isOpen && menuRef.current && !menuRef.current.contains(e.target)) {
         setIsOpen(false);
       }
     }
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
@@ -27,7 +26,6 @@ function Navbar() {
       border-b border-white/10
     ">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        
         <Link 
           to="/" 
           onClick={closeMenu}
@@ -36,13 +34,47 @@ function Navbar() {
           Himanshu Portfolio
         </Link>
 
+        {/* Desktop Menu */}
         <div className="hidden md:flex gap-8">
-          <Link to="/" className="font-semibold text-white hover:text-orange-500 transform hover:scale-125">Home</Link>
-          <Link to="/about" className="font-semibold text-white hover:text-orange-500 transform hover:scale-125">About</Link>
-          <Link to="/projects" className="font-semibold text-white hover:text-orange-500 transform hover:scale-125">Projects</Link>
-          <Link to="/contact" className="font-semibold text-white hover:text-orange-500 transform hover:scale-125">Contact-Us</Link>
+          <Link 
+            to="/" 
+            className="flex items-center gap-2 font-semibold text-white 
+              transition-all duration-300 transform
+              hover:text-orange-500 hover:scale-125"
+          >
+            <FaHome />
+            Home
+          </Link>
+          <Link 
+            to="/about" 
+            className="flex items-center gap-2 font-semibold text-white 
+              transition-all duration-300 transform
+              hover:text-orange-500 hover:scale-125"
+          >
+            <FaUserAlt />
+            About
+          </Link>
+          <Link 
+            to="/projects" 
+            className="flex items-center gap-2 font-semibold text-white 
+              transition-all duration-300 transform
+              hover:text-orange-500 hover:scale-125"
+          >
+            <FaFolderOpen />
+            Projects
+          </Link>
+          <Link 
+            to="/contact" 
+            className="flex items-center gap-2 font-semibold text-white 
+              transition-all duration-300 transform
+              hover:text-orange-500 hover:scale-125"
+          >
+            <FaEnvelope />
+            Contact-Us
+          </Link>
         </div>
 
+        {/* Hamburger Icon */}
         <div className="md:hidden">
           <button 
             onClick={() => setIsOpen(!isOpen)} 
@@ -50,13 +82,13 @@ function Navbar() {
           >
             {isOpen ? (
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
@@ -79,10 +111,46 @@ function Navbar() {
             animate-slideDown
           "
         >
-          <Link onClick={closeMenu} to="/" className="text-white text-lg font-medium hover:text-orange-400">Home</Link>
-          <Link onClick={closeMenu} to="/about" className="text-white text-lg font-medium hover:text-orange-400">About</Link>
-          <Link onClick={closeMenu} to="/projects" className="text-white text-lg font-medium hover:text-orange-400">Projects</Link>
-          <Link onClick={closeMenu} to="/contact" className="text-white text-lg font-medium hover:text-orange-400">Contact-Us</Link>
+          <Link 
+            onClick={closeMenu} 
+            to="/" 
+            className="flex items-center gap-2 text-white text-lg font-medium
+              transition-all duration-300 transform 
+              hover:text-orange-400 hover:scale-110"
+          >
+            <FaHome />
+            Home
+          </Link>
+          <Link 
+            onClick={closeMenu} 
+            to="/about" 
+            className="flex items-center gap-2 text-white text-lg font-medium
+              transition-all duration-300 transform 
+              hover:text-orange-400 hover:scale-110"
+          >
+            <FaUserAlt />
+            About
+          </Link>
+          <Link 
+            onClick={closeMenu} 
+            to="/projects" 
+            className="flex items-center gap-2 text-white text-lg font-medium
+              transition-all duration-300 transform 
+              hover:text-orange-400 hover:scale-110"
+          >
+            <FaFolderOpen />
+            Projects
+          </Link>
+          <Link 
+            onClick={closeMenu} 
+            to="/contact" 
+            className="flex items-center gap-2 text-white text-lg font-medium
+              transition-all duration-300 transform 
+              hover:text-orange-400 hover:scale-110"
+          >
+            <FaEnvelope />
+            Contact-Us
+          </Link>
         </div>
       )}
     </nav>
