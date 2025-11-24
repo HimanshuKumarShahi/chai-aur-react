@@ -156,7 +156,7 @@ function Home() {
     style={{
       color: "orange",
       marginBottom: "30px",
-      fontSize: "32px",
+      fontSize: "30px",
       fontWeight: "bold",
       textAlign: "center",
     }}
@@ -169,19 +169,21 @@ function Home() {
 
     const skills = [
       { name: "JavaScript", level: 75 },
-      { name: "React", level: 76 },
-      { name: "Python", level: 65 },
+      { name: "FullStack", level: 76 },
+      { name: "Python", level: 70 },
+      { name: "MongoDB", level: 50 },
+      { name: "Backend", level: 40 },
+      { name: "Tailwind Css", level: 69 },
+      { name: "Node.js", level: 69 },
       { name: "Java", level: 60 },
-      { name: "Node.js", level: 65 },
       { name: "SQL", level: 60 },
       { name: "HTML", level: 58 },
       { name: "CSS", level: 49 },
       { name: "C++", level: 55 },
-      { name: "MongoDB", level: 50 },
+      { name: "C", level: 57 },
     ];
 
-    // show only first 4 unless expanded
-    const visible = showAll ? skills : skills.slice(0, 4);
+    const visible = showAll ? skills : skills.slice(0, 5);
 
     return (
       <>
