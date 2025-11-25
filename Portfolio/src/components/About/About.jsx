@@ -34,7 +34,7 @@ const About = () => {
         {/* LEFT: Profile + Stats */}
         <div className="flex flex-col items-center">
           <img
-            src="./public/profile.png"
+            src="/profile.png"
             className="w-72 h-72 object-cover rounded-xl shadow-lg border border-orange-500/30"
           />
 
@@ -109,6 +109,32 @@ const About = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="bg-black/30 border border-white/10 p-6 rounded-2xl shadow">
+            <h5 className="text-lg font-bold text-orange-400 mb-3">Experience</h5>
+            <ul className="space-y-2 text-gray-300 text-base">
+              <li>
+                <span className="font-semibold">Freelance Projects:</span> Built UI/UX, landing pages & small web apps
+              </li>
+              <li>
+                <span className="font-semibold">Internships:</span> Hands-on dev experience
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-black/30 border border-white/10 p-6 rounded-2xl shadow">
+            <h5 className="text-lg font-bold text-orange-400 mb-3">Education</h5>
+            <ul className="space-y-2 text-gray-300 text-base">
+              <li>
+                <span className="font-semibold">BCA —</span> Core Computer Applications & Development
+              </li>
+              <li>
+                <span className="font-semibold">Certifications:</span> HTML/CSS/JS, React, Tailwind, DSA
+              </li>
+            </ul>
           </div>
         </div>
 
