@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const skills = [
@@ -16,32 +17,35 @@ const About = () => {
   return (
     <div className="w-full min-h-screen text-white py-20 px-6 relative overflow-hidden bg-[#0a0702]">
 
-      {/* --- background like Home.jsx --- */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Background blobs */}
+      <div className="absolute inset-0 pointer-events-none z-0">
         <div className="w-[600px] h-[600px] bg-orange-500/10 blur-[160px] rounded-full absolute -top-10 -left-20" />
         <div className="w-[500px] h-[500px] bg-orange-600/10 blur-[140px] rounded-full absolute bottom-0 right-0" />
       </div>
 
       {/* Heading */}
-      <h1 className="text-center text-5xl font-bold text-orange-500">About Me</h1>
-      <p className="text-center mt-3 text-gray-300 max-w-3xl mx-auto text-lg">
-        BCA student and aspiring full-stack developer crafting clean UI, 
+      <h1 className="text-center text-5xl font-bold text-orange-500 relative z-10">
+        About Me
+      </h1>
+      <p className="text-center mt-3 text-gray-300 max-w-3xl mx-auto text-lg relative z-10">
+        BCA student and aspiring full-stack developer crafting clean UI,
         strong backend logic and sharp digital experiences.
       </p>
 
-      <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
+      {/* 3 Column Layout */}
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 relative z-10">
 
-        {/* LEFT: Profile + Stats */}
+        {/* LEFT - Profile */}
         <div className="flex flex-col items-center">
           <img
             src="/profile.png"
-            className="w-72 h-72 object-cover rounded-xl shadow-lg border border-orange-500/30"
+            className="w-64 sm:w-72 h-64 sm:h-72 object-cover rounded-xl shadow-lg border border-orange-500/30"
           />
 
           <h2 className="text-2xl font-bold mt-6">Himanshu Kumar</h2>
           <p className="text-gray-400 text-sm">BCA Student • Developer</p>
 
-          <div className="flex gap-16 mt-6">
+          <div className="flex gap-10 mt-6">
             <div>
               <p className="text-2xl font-bold text-orange-500">7+</p>
               <p className="text-gray-400 text-sm">Projects</p>
@@ -52,17 +56,58 @@ const About = () => {
             </div>
           </div>
 
-          <div className="flex gap-4 mt-8">
-            <button className="px-5 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 transition">
-              View Projects
-            </button>
-            <button className="px-5 py-2 rounded-lg border border-orange-500 hover:bg-orange-500/20 transition">
-              Contact
-            </button>
-          </div>
+     <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-6">
+      {/* "Explore Work" Button links to /projects */}
+      <Link 
+        to="/projects"
+        className="
+          px-6 py-3 
+          bg-orange-500 
+          text-black 
+          font-semibold 
+          rounded-full 
+          shadow-lg 
+          border-2 border-orange-500
+          transition-all duration-200 
+          hover:bg-black 
+          hover:text-yellow-400 
+          hover:border-yellow-400
+          hover:scale-110
+          cursor-pointer
+          focus:outline-none
+          flex items-center justify-center
+        "
+      >
+       View Projects
+      </Link>
+    
+      {/* "Contact Me" Button links to /contact */}
+      <Link
+        to="/contact"
+        className="
+          px-6 py-3 
+          bg-black 
+          text-yellow-400 
+          font-semibold 
+          rounded-full 
+          border-2 border-yellow-400 
+          transition-all duration-200 
+          hover:bg-orange-500 
+          hover:text-black 
+          hover:border-orange-500
+          hover:scale-110
+          cursor-pointer
+          focus:outline-none
+          flex items-center justify-center
+        "
+      >
+        Contact Me
+      </Link>
+    </div>
+
         </div>
 
-        {/* CENTER: Who Am I */}
+        {/* CENTER - Who Am I */}
         <div className="bg-white/5 border border-orange-500/20 rounded-xl p-8 backdrop-blur">
           <h2 className="text-2xl font-bold text-orange-400">Who am I?</h2>
 
@@ -89,13 +134,16 @@ const About = () => {
           </div>
         </div>
 
-        {/* RIGHT: Skills */}
+        {/* RIGHT - Skills */}
         <div className="bg-white/5 border border-orange-500/20 rounded-xl p-8 backdrop-blur">
           <h2 className="text-2xl font-bold text-orange-400 mb-6">Skills</h2>
 
           <div className="grid grid-cols-2 gap-5">
             {skills.map((skill) => (
-              <div key={skill.name} className="bg-white/5 p-4 rounded-lg border border-orange-500/20">
+              <div
+                key={skill.name}
+                className="bg-white/5 p-4 rounded-lg border border-orange-500/20"
+              >
                 <p className="font-semibold text-sm">
                   {skill.name}
                   <span className="text-orange-400 ml-1">{skill.level}%</span>
@@ -111,33 +159,37 @@ const About = () => {
             ))}
           </div>
         </div>
+      </div>
 
-           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="bg-black/30 border border-white/10 p-6 rounded-2xl shadow">
-            <h5 className="text-lg font-bold text-orange-400 mb-3">Experience</h5>
-            <ul className="space-y-2 text-gray-300 text-base">
-              <li>
-                <span className="font-semibold">Freelance Projects:</span> Built UI/UX, landing pages & small web apps
-              </li>
-              <li>
-                <span className="font-semibold">Internships:</span> Hands-on dev experience
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-black/30 border border-white/10 p-6 rounded-2xl shadow">
-            <h5 className="text-lg font-bold text-orange-400 mb-3">Education</h5>
-            <ul className="space-y-2 text-gray-300 text-base">
-              <li>
-                <span className="font-semibold">BCA —</span> Core Computer Applications & Development
-              </li>
-              <li>
-                <span className="font-semibold">Certifications:</span> HTML/CSS/JS, React, Tailwind, DSA
-              </li>
-            </ul>
-          </div>
+      {/* EXPERIENCE + EDUCATION */}
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
+        <div className="bg-black/30 border border-white/10 p-6 rounded-2xl shadow">
+          <h5 className="text-lg font-bold text-orange-400 mb-3">Experience</h5>
+          <ul className="space-y-2 text-gray-300 text-base">
+            <li>
+              <span className="font-semibold">Freelance Projects:</span> Built
+              UI/UX, landing pages & small web apps
+            </li>
+            <li>
+              <span className="font-semibold">Internships:</span> Hands-on dev
+              experience
+            </li>
+          </ul>
         </div>
 
+        <div className="bg-black/30 border border-white/10 p-6 rounded-2xl shadow">
+          <h5 className="text-lg font-bold text-orange-400 mb-3">Education</h5>
+          <ul className="space-y-2 text-gray-300 text-base">
+            <li>
+              <span className="font-semibold">BCA —</span> Core Computer
+              Applications & Development
+            </li>
+            <li>
+              <span className="font-semibold">Certifications:</span> HTML/CSS/JS,
+              React, Tailwind, DSA
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

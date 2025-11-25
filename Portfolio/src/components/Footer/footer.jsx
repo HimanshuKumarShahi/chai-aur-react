@@ -37,7 +37,7 @@ function Footer() {
             className="flex items-center gap-2 font-semibold transition-all duration-300 hover:text-orange-500 hover:scale-110"
           >
             <FaEnvelope size={22} />
-            Contact-Us
+            Contact
           </a>
         </div>
 
