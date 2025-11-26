@@ -1,16 +1,51 @@
-# React + Vite
+# Himanshu Kumar – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive developer portfolio built with **React** and **Tailwind CSS v4.1**.  
+This site showcases my projects, skills, and contact information as a BCA student and aspiring full‑stack developer.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔥 Features
 
-## React Compiler
+- **Modern UI** with dark theme and orange highlights
+- **Responsive layout** for mobile, tablet, and desktop
+- **Protected profile image** (right‑click/drag disabled)
+- **Smooth background effects** (radial glows, blurred shapes, subtle animations)
+- **Structured sections**
+  - Hero (intro + CTA buttons)
+  - Why Choose Me
+  - Skills with animated progress bars & “Show More” toggle
+  - About page (Who I Am, skills, experience, education)
+  - Projects page (list of selected work)
+  - Contact page (social links, resume download, mailto form)
+- **Navbar & Footer**
+  - Icon‑based navigation (Home, About, Projects, Contact)
+  - Social icons and quick links in footer
+- **Contact form with validation**
+  - Name, email, and message checks
+  - Opens user’s email client via `mailto:` with pre‑filled content
+  - Clears form fields after sending
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React (Vite or CRA, depending on setup)
+- **Styling:** Tailwind CSS v4.1
+- **Icons:** React Icons (`react-icons`)
+- **Routing:** `react-router-dom`
+
+---
+
+## 📬 Contact
+
+If you’d like to connect, you can reach me at:
+
+- **GitHub:** https://github.com/HimanshuKumarShahi  
+- **LinkedIn:** https://www.linkedin.com/in/himanshu-kumar-s-a434372b7  
+- **Email:** kh419368@gmail.com  
+
+---
+
+
+
