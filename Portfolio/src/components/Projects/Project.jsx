@@ -56,13 +56,22 @@ const Projects = () => {
         {projects.map((p, i) => (
           <div
             key={i}
-            className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-lg shadow-xl hover:scale-[1.05] hover:border-orange-500/40 transition-all duration-300 group"
+            className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-lg shadow-xl hover:scale-[1.05] hover:border-orange-500/40 transition-all duration-500 group"
           >
             {/* Image */}
             <div className="w-full h-48 overflow-hidden rounded-xl mb-4">
               <img
                 src={p.img}
-                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
+                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-2000"
+                 draggable={false}
+                onContextMenu={e => e.preventDefault()}
+                style={{
+                  userSelect: "none",
+                  WebkitUserDrag: "none",
+                  WebkitUserSelect: "none",
+                  MozUserSelect: "none",
+                  msUserSelect: "none"
+                }}
               />
             </div>
 

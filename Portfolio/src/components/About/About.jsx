@@ -68,6 +68,15 @@ const About = () => {
             src="/profile.png"
             alt="profile"
             className="w-72 sm:w-80 h-72 sm:h-80 object-cover rounded-2xl shadow-2xl"
+             draggable={false}
+                onContextMenu={e => e.preventDefault()}
+                style={{
+                  userSelect: "none",
+                  WebkitUserDrag: "none",
+                  WebkitUserSelect: "none",
+                  MozUserSelect: "none",
+                  msUserSelect: "none"
+                }}
           />
 
           <h2 className="text-2xl font-bold mt-6">Himanshu Kumar</h2>
