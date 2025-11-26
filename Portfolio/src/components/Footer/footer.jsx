@@ -15,7 +15,6 @@ function Footer() {
     >
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
 
-        {/* Social + Contact Links */}
         <div
           className="
             flex flex-row 
@@ -27,7 +26,7 @@ function Footer() {
           "
         >
 
-          {/* GitHub */}
+        
           <a
             href="https://github.com/HimanshuKumarShahi"
             target="_blank"
@@ -45,9 +44,8 @@ function Footer() {
             GitHub
           </a>
 
-          {/* LinkedIn */}
           <a
-            href="https://linkedin.com/in/your-link"
+            href="https://www.linkedin.com/in/himanshu-kumar-s-a434372b7"
             target="_blank"
             rel="noopener noreferrer"
             className="
@@ -63,7 +61,7 @@ function Footer() {
             LinkedIn
           </a>
 
-          {/* Contact Page */}
+         
           <Link
             to="/contact"
             className="
@@ -81,7 +79,7 @@ function Footer() {
 
         </div>
 
-        {/* Copyright */}
+       
         <p className="text-sm text-gray-400 mt-3 text-center">
           © {new Date().getFullYear()} HIMANSHU KUMAR SHAHI. Created with 💖😎
         </p>

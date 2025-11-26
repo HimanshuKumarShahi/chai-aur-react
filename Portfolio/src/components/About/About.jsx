@@ -8,6 +8,7 @@ const skills = [
   { name: "JavaScript", level: 75 },
   { name: "Python", level: 70 },
   { name: "MongoDB", level: 50 },
+  { name: "Git & GitHub", level: 79 },
   { name: "Backend", level: 40 },
   { name: "Tailwind Css", level: 69 },
   { name: "Node.js", level: 69 },
@@ -23,7 +24,7 @@ const About = () => {
   return (
     <div className="w-full min-h-screen text-white py-20 px-6 relative overflow-hidden bg-[#0a0702]">
 
-      {/* Background Glow */}
+
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_45%,rgba(252,211,77,0.10),transparent_70%)]"></div>
 
@@ -32,7 +33,7 @@ const About = () => {
         <div className="absolute top-1/2 left-0 w-2 h-48 bg-yellow-300/10 rounded-xl rotate-45 blur-lg"></div>
       </div>
 
-      {/* Decorative Shapes */}
+  
       <div className="absolute top-20 left-10 w-24 h-24 border-2 border-orange-400/20 rounded-lg rotate-12 animate-pulse-slow z-10"></div>
 
       <div className="absolute top-[90px] left-40 w-24 h-24 border-2 border-orange-600/20 rounded-lg rotate-12 animate-pulse-slow z-10"></div>
@@ -50,7 +51,6 @@ const About = () => {
 
       <div className="absolute top-1/3 left-1/3 w-64 h-64 border border-white/5 rounded-xl -rotate-12"></div>
 
-      {/* Heading */}
       <h1 className="text-center text-4xl md:text-5xl font-bold text-orange-500 relative z-10">
         About Me
       </h1>
@@ -59,11 +59,10 @@ const About = () => {
         with solid logic to build purposeful, fast and reliable web experiences.
       </p>
 
-      {/* Main Layout */}
-      <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
+      <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10 ">
 
-        {/* Profile */}
-        <div className="flex flex-col items-center bg-white/5 p-6 rounded-2xl border border-white/10 shadow backdrop-blur">
+    
+        <div className="flex flex-col items-center bg-black/30 border border-white/10 p-8 rounded-2xl shadow">
           <img
             src="/profile.png"
             alt="profile"
@@ -80,11 +79,11 @@ const About = () => {
           />
 
           <h2 className="text-2xl font-bold mt-6">Himanshu Kumar</h2>
-          <p className="text-gray-400 text-sm">BCA Student • Developer</p>
+          <p className="text-gray-400 text-sm">BCA Student • Full-Stack Developer</p>
 
           <div className="flex gap-10 mt-6">
             <div>
-              <p className="text-3xl font-bold text-orange-500">7+</p>
+              <p className="text-3xl font-bold text-orange-500">1+</p>
               <p className="text-gray-400 text-sm">Projects</p>
             </div>
             <div>
@@ -110,22 +109,24 @@ const About = () => {
           </div>
         </div>
 
-        {/* Middle About Cards */}
+       
         <div className="space-y-10">
           <div className="bg-black/30 border border-white/10 p-6 rounded-2xl shadow">
             <h5 className="text-lg font-bold text-orange-400 mb-3">Who Am I?</h5>
             <p className="text-gray-300 leading-relaxed text-base">
-              I'm a developer who likes to keep things simple but effective…
+             I am a passionate BCA student and a dedicated learner with a deep interest in modern web development and technology. My journey began with core programming languages like JavaScript,Python and Java, and has grown into a love for full-stack development using tools like React, Node.js, and MongoDB.
+             <br />
+             I  write clean, efficient code and designing user-friendly interfaces that make a real impact. Drawing inspiration from both logic and creativity, I approach every project with discipline, focus, and a desire to solve real-world problems. As a tech explorer, I am always eager to learn new skills, experiment with new frameworks, and collaborate with others to build something meaningful.
             </p>
           </div>
 
           <div className="bg-black/30 border border-white/10 p-6 rounded-2xl shadow">
             <h5 className="text-lg font-bold text-orange-400 mb-3">What I Do</h5>
             <ul className="space-y-2 text-gray-300">
-              <li>• Build responsive UI with React + Tailwind</li>
+              <li>• Build responsive Projects with React + Tailwind</li>
               <li>• Write clean, reusable & scalable components</li>
-              <li>• Develop backend logic using Node.js</li>
               <li>• Integrate REST APIs and manage databases</li>
+              <li>• Develop backend logic using Node.js</li>
               <li>• Improve speed, SEO & performance optimization</li>
             </ul>
           </div>
@@ -134,15 +135,14 @@ const About = () => {
             <h5 className="text-lg font-bold text-orange-400 mb-3">Current Goals</h5>
             <ul className="space-y-2 text-gray-300">
               <li>• Master full-stack MERN Development</li>
-              <li>• Build production-ready apps</li>
               <li>• Enhance backend architecture patterns</li>
+              <li>• Build production-ready apps</li>
               <li>• Learn advanced React optimization techniques</li>
             </ul>
           </div>
         </div>
 
-        {/* Skills */}
-        <div className="bg-white/5 border border-orange-500/20 rounded-xl p-8 backdrop-blur">
+        <div className="bg-black/30 border border-white/10 p-6 rounded-2xl shadow">
           <h2 className="text-2xl font-bold text-orange-400 mb-6">Skills</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -168,21 +168,23 @@ const About = () => {
         </div>
       </div>
 
-      {/* Experience + Education */}
+
       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
         <div className="bg-black/30 border border-white/10 p-6 rounded-2xl shadow">
           <h5 className="text-lg font-bold text-orange-400 mb-3">Experience</h5>
           <ul className="space-y-2 text-gray-300">
-            <li><strong>Freelance Projects:</strong> UI/UX, landing pages, small web apps.</li>
-            <li><strong>Internships:</strong> Hands-on dev experience.</li>
+            <li><strong>Projects:</strong>Portfolio web-page,Game-(Bubble,tic-tak-toe),landing pages,small web apps.,Calculator,Random-password Genertor</li>
+            <li><strong>Internships:</strong> -- Not Available--</li>
           </ul>
         </div>
 
         <div className="bg-black/30 border border-white/10 p-6 rounded-2xl shadow">
           <h5 className="text-lg font-bold text-orange-400 mb-3">Education</h5>
           <ul className="space-y-2 text-gray-300">
-            <li><strong>BCA —</strong> Core computer applications & development.</li>
-            <li><strong>Certifications:</strong> HTML/CSS/JS, React, Tailwind, DSA.</li>
+            <li><strong>BCA — </strong> Core computer applications & development.</li>
+            <li><strong>Class 12 (CBSE) — </strong> First Division.</li>
+            <li><strong>Class 10 (CBSE) — </strong> First Division.</li>
+            <li><strong>Certifications:</strong> --Under Progress--</li>
           </ul>
         </div>
       </div>

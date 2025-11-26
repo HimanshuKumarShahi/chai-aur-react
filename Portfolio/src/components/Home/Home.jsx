@@ -8,9 +8,10 @@ function SkillSection() {
     { name: "JavaScript", level: 75 },
     { name: "Python", level: 70 },
     { name: "MongoDB", level: 50 },
+    { name: "Git & GitHub", level: 79 },
     { name: "Backend", level: 40 },
     { name: "Tailwind Css", level: 69 },
-    { name: "Node.js", level: 69 },
+    { name: "Node.js", level: 65 },
     { name: "Java", level: 60 },
     { name: "SQL", level: 60 },
     { name: "HTML", level: 58 },
@@ -59,17 +60,16 @@ function SkillSection() {
 function Home() {
   return (
     <div className="min-h-screen w-full bg-black text-white relative overflow-hidden pt-32 pb-0 px-4">
-      {/* Background shapes and glows */}
+
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_45%,rgba(252,211,77,0.10),transparent_70%)]"></div>
         <div className="absolute top-0 left-0 w-64 h-48 rounded-full bg-yellow-500/10 blur-2xl"></div>
         <div className="absolute bottom-0 right-0 w-72 h-56 rounded-full bg-blue-400/10 blur-3xl"></div>
         <div className="absolute top-1/2 left-0 w-2 h-48 bg-yellow-300/10 rounded-xl rotate-45 blur-lg"></div>
       </div>
-      {/* Decorative borders/boxes */}
+    
       <div className="absolute top-20 left-10 w-24 h-24 border-2 border-orange-400/20 rounded-lg rotate-12 animate-pulse-slow z-10"></div>
-      <div className="absolute top-[90px] left-40 w-24 h-24 border-2 border-orange-600/20 rounded-lg rotate-12 animate-pulse-slow z-10"></div>
-      <div className="absolute bottom-28 right-10 w-20 h-20 border-2 border-cyan-400/20 rounded-2xl -rotate-12 animate-pulse-slow z-10"></div>
+      <div className="absolute bottom-28 -right-8 w-20 h-20 border-2 border-cyan-200/20 rounded-2xl -rotate-12 animate-pulse-slow z-10"></div>
       <div className="absolute top-1/2 left-4 w-16 h-16 border border-white/10 rounded-xl rotate-6 z-10"></div>
       <div className="absolute top-1/2 left-50 w-20 h-20 border border-white/10 rounded-xl rotate-8 z-10"></div>
       <div className="absolute top-[35%] right-8 w-32 h-6 border border-pink-400/10 rounded-xl -rotate-6"></div>
@@ -77,7 +77,7 @@ function Home() {
       <div className="absolute top-10 right-5 w-8 h-32 border border-blue-400/15 rounded-lg rotate-12"></div>
       <div className="absolute top-1/3 left-1/3 w-64 h-64 border border-white/5 rounded-xl -rotate-12"></div>
 
-      {/* Hero Section */}
+      
       <div className="relative z-20 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 pb-0 md:pb-4">
         <div className="flex-1 text-center md:text-left">
           <p className="text-gray-400 tracking-widest text-xl mb-5">
@@ -108,8 +108,7 @@ function Home() {
         </div>
         <div className="flex-1 flex justify-center px-4 md:px-0">
           <div className="relative">
-            <div className="absolute inset-0 border border-yellow-500/20 rounded-2xl -rotate-10"></div>
-            <div className="absolute inset-0 border border-yellow-500/20 rounded-2xl -rotate-40"></div>
+            <div className="absolute inset-0 border border-yellow-500/20 rounded-2xl -rotate-22"></div>
             <div className="absolute -top-4 -left-6 w-20 h-20 bg-yellow-400/20 blur-2xl rounded-full z-0 animate-pulse-slow"></div>
             <div className="relative w-72 h-80">
               <img
@@ -141,7 +140,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Why Choose Me Section */}
+      
       <section className="w-full bg-black text-white py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-orange-500 mb-6">
