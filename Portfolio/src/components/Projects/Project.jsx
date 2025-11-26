@@ -31,45 +31,48 @@ const Projects = () => {
   return (
     <div className="w-full min-h-screen text-white py-20 px-6 relative overflow-hidden bg-[#0a0702]">
 
-      {/* Background FX */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="w-[500px] h-[500px] bg-orange-500/10 blur-[150px] rounded-full absolute -top-10 left-0" />
-        <div className="w-[400px] h-[400px] bg-orange-600/10 blur-[150px] rounded-full absolute bottom-0 right-0" />
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(252,211,77,0.10),transparent_70%)]"></div>
+        <div className="absolute top-10 left-0 w-72 h-72 bg-yellow-500/10 blur-[120px]"></div>
+        <div className="absolute bottom-10 right-0 w-96 h-96 bg-orange-500/10 blur-[150px]"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-80 h-80 bg-blue-400/5 blur-[200px]"></div>
       </div>
 
-      {/* HEADING */}
-      <h1 className="text-center text-4xl md:text-5xl font-bold text-orange-500 relative z-10">
-        My Projects
-      </h1>
+      {/* Floating Shapes */}
+      <div className="absolute top-20 left-6 w-28 h-28 border border-orange-500/20 rounded-2xl rotate-12 animate-pulse-slow" />
+      <div className="absolute bottom-24 right-6 w-16 h-16 border border-blue-400/20 rounded-xl -rotate-12 animate-pulse-slow" />
+      <div className="absolute top-1/2 left-10 w-14 h-14 border border-white/10 rounded-lg rotate-6" />
+      <div className="absolute top-1/3 right-10 w-28 h-10 border border-pink-400/10 rounded-xl -rotate-6" />
+
+      {/* Heading */}
+      <h1 className="text-center text-4xl md:text-5xl font-bold text-orange-500 relative z-10">My Projects</h1>
       <p className="text-center text-gray-300 mt-3 mb-12 max-w-2xl mx-auto relative z-10">
-        A collection of work showcasing my development skills — blending clean UI,
-        efficient logic and performance-focused design.
+        A curated list of digital creations — blending function, aesthetics, and performance.
       </p>
 
-      {/* PROJECT GRID */}
+      {/* Project Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 relative z-10 max-w-7xl mx-auto">
         {projects.map((p, i) => (
           <div
             key={i}
-            className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-lg shadow-xl hover:scale-105 hover:border-orange-500/40 transition-all duration-300"
+            className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-lg shadow-xl hover:scale-[1.05] hover:border-orange-500/40 transition-all duration-300 group"
           >
-            {/* PROJECT IMAGE */}
+            {/* Image */}
             <div className="w-full h-48 overflow-hidden rounded-xl mb-4">
               <img
                 src={p.img}
-                className="w-full h-full object-cover hover:scale-110 transition-all duration-500"
+                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
               />
             </div>
 
-            {/* TITLE */}
+            {/* Title */}
             <h2 className="text-xl font-bold text-orange-400">{p.title}</h2>
 
-            {/* DESCRIPTION */}
-            <p classname="text-gray-300 text-sm mt-2">
-              {p.desc}
-            </p>
+            {/* Description */}
+            <p className="text-gray-300 text-sm mt-2">{p.desc}</p>
 
-            {/* TECH TAGS */}
+            {/* Tech */}
             <div className="flex flex-wrap gap-2 mt-4">
               {p.tech.map((t) => (
                 <span
@@ -81,19 +84,20 @@ const Projects = () => {
               ))}
             </div>
 
-            {/* BUTTONS */}
+            {/* Buttons */}
             <div className="flex gap-4 mt-6">
               <a
                 href={p.live}
                 target="_blank"
-                className="flex-1 text-center bg-orange-500 text-black font-semibold py-2 rounded-lg hover:bg-orange-600 transition-all"
+                className="flex-1 text-center px-6 py-3 bg-orange-500 text-black font-semibold rounded-xl shadow-lg border-2 border-orange-500 transition-all duration-200 hover:bg-black hover:text-yellow-400 hover:border-yellow-400 hover:scale-110 flex items-center justify-center"
               >
                 Live
               </a>
+
               <a
                 href={p.code}
                 target="_blank"
-                className="flex-1 text-center bg-black border border-orange-500 text-orange-400 font-semibold py-2 rounded-lg hover:bg-orange-600 hover:text-black hover:border-orange-600 transition-all"
+                className="flex-1 text-center px-6 py-3 bg-black text-yellow-400 font-semibold rounded-xl border-2 border-yellow-400 transition-all duration-200 hover:bg-orange-500 hover:text-black hover:border-orange-500 hover:scale-110 flex items-center justify-center"
               >
                 Code
               </a>
@@ -102,8 +106,7 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* SPACING */}
-      <div className="h-10"></div>
+      <div className="h-16" />
     </div>
   );
 };

@@ -22,11 +22,36 @@ const About = () => {
   return (
     <div className="w-full min-h-screen text-white py-20 px-6 relative overflow-hidden bg-[#0a0702]">
 
-      {/* Background blobs */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="w-[600px] h-[600px] bg-orange-500/10 blur-[160px] rounded-full absolute -top-10 -left-20" />
-        <div className="w-[500px] h-[500px] bg-orange-600/10 blur-[140px] rounded-full absolute bottom-0 right-0" />
+     <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_45%,rgba(252,211,77,0.10),transparent_70%)]"></div>
+
+        {/* Big top-left spot */}
+        <div className="absolute top-0 left-0 w-64 h-48 rounded-full bg-yellow-500/10 blur-2xl"></div>
+        {/* Blue highlight, bottom-right */}
+        <div className="absolute bottom-0 right-0 w-72 h-56 rounded-full bg-blue-400/10 blur-3xl"></div>
+        {/* Diagonal highlight */}
+        <div className="absolute top-1/2 left-0 w-2 h-48 bg-yellow-300/10 rounded-xl rotate-45 blur-lg"></div>
       </div>
+
+      {/* Decorative Boxes & Lines */}
+      {/* Top left box */}
+      <div className="absolute top-20 left-10 w-24 h-24 border-2 border-orange-400/20 rounded-lg rotate-12 animate-pulse-slow z-10"></div>
+
+      <div className="absolute top-90 left-40 w-24 h-24 border-2 border-orange-600/20 rounded-lg rotate-12 animate-pulse-slow z-10"></div>
+      {/* Bottom right box */}
+      <div className="absolute bottom-28 right-10 w-20 h-20 border-2 border-cyan-400/20 rounded-2xl -rotate-12 animate-pulse-slow z-10"></div>
+      {/* Middle left smaller box */}
+      <div className="absolute top-1/2 left-4 w-16 h-16 border border-white/10 rounded-xl rotate-6 z-10"></div>
+      <div className="absolute top-1/2 left-50 w-20 h-20 border border-white/10 rounded-xl rotate-8 z-10"></div>
+      {/* Floating thin rectangle */}
+      <div className="absolute top-[35%] right-8 w-32 h-6 border border-pink-400/10 rounded-xl -rotate-6"></div>
+      {/* Bottom middle wide box */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-40 h-10 border-2 border-fuchsia-300/15 rounded-md rotate-3"></div>
+      {/* Right edge vertical box */}
+      <div className="absolute top-10 right-5 w-8 h-32 border border-blue-400/15 rounded-lg rotate-12"></div>
+      {/* Center faint square behind text */}
+      <div className="absolute top-1/3 left-1/3 w-64 h-64 border border-white/5 rounded-xl -rotate-12"></div>
+
 
       {/* Heading */}
       <h1 className="text-center text-4xl md:text-5xl font-bold text-orange-500 relative z-10">
