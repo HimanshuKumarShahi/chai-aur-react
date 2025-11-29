@@ -12,8 +12,8 @@ const projects = [
   {
     title: "TO-DO-LIST",
     img: "/project_2.png",
-    desc: " built a `To Do List` project using React and Tailwind.",
-    tech: ["React", "Tailwind", "AI","useState"],
+    desc: " built a `To Do List` project using JavaScript.",
+    tech: ["JavaScript","LocalStorage"],
     live: "https://to-do-list-delta-wheat.vercel.app/",
     code: "https://github.com/HimanshuKumarShahi",
   },
