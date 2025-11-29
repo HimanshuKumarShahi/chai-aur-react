@@ -9,6 +9,14 @@ const projects = [
     live: "https://portfolio-ashen-seven-eq9e6jhzvm.vercel.app/",
     code: "https://github.com/HimanshuKumarShahi",
   },
+  {
+    title: "TO-DO-LIST",
+    img: "/project_2.png",
+    desc: " built a `To Do List` project using React and Tailwind.",
+    tech: ["React", "Tailwind", "AI","useState"],
+    live: "https://to-do-list-delta-wheat.vercel.app/",
+    code: "https://github.com/HimanshuKumarShahi",
+  },
   
 ];
 
