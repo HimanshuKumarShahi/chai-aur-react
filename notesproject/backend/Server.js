@@ -8,11 +8,15 @@ app.get("/api",(req,res)=>{
 });
 
 app.post("/api/notes",(req,res)=>{
-    res.status(201).json({Message:"Post Created Successfully"})
+    res.status(201).json({Message:"Notes Created Successfully"})
 })
 
-app.put("/api/notes",(req,res)=>{
-    res.status(200).json({Message:"Post Updated Successfully"})
+app.put("/api/notes/:id",(req,res)=>{
+    res.status(200).json({Message:"Notes Updated Successfully"})
+})
+
+app.delete("/api/notes/:id",(req,res)=>{
+    res.status(200).json({Message:"Notes Deleted Successfully"})
 })
 
 app.listen(port,()=>{
