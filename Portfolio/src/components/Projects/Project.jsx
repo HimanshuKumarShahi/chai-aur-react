@@ -5,7 +5,7 @@ const projects = [
     title: "Portfolio Website",
     img: "/project_1.png",
     desc: "A modern, fully responsive personal portfolio built using React and Tailwind.",
-    tech: ["React", "Tailwind", "AI","react-router-dom"],
+    tech: ["React", "Tailwind","react-router-dom","AI"],
     live: "https://portfolio-ashen-seven-eq9e6jhzvm.vercel.app/",
     code: "https://github.com/HimanshuKumarShahi",
   },
