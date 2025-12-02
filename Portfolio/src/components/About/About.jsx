@@ -1,5 +1,3 @@
-/* CLEANED + FIXED VERSION — NO DESIGN CHANGES */
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -83,7 +81,7 @@ const About = () => {
 
           <div className="flex gap-10 mt-6">
             <div>
-              <p className="text-3xl font-bold text-orange-500">1+</p>
+              <p className="text-3xl font-bold text-orange-500">2+</p>
               <p className="text-gray-400 text-sm">Projects</p>
             </div>
             <div>
