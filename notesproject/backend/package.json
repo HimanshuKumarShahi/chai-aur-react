@@ -2,15 +2,15 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon Server.js",
-    "start":"node Server.js"
+    "dev": "nodemon src/Server.js",
+    "start":"node src/Server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+ "type": "module",
   "dependencies": {
     "express": "^5.1.0",
     "nodemon": "^3.1.11"
