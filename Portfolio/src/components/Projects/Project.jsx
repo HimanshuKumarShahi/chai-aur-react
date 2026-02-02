@@ -12,61 +12,62 @@ const projects = [
   {
     title: "TO-DO-LIST",
     img: "/project_2.png",
-    desc: " built a `To Do List` project using JavaScript.",
+    desc: "Built a `To Do List` project using JavaScript.",
     tech: ["JavaScript","LocalStorage"],
     live: "https://to-do-list-delta-wheat.vercel.app/",
     code: "https://github.com/HimanshuKumarShahi",
   },
-  
 ];
 
-const Projects = () => {
+export default function Projects() {
   return (
-    <div className="w-full min-h-screen text-white py-20 px-6 relative overflow-hidden bg-[#0a0702]">
+    <div className="relative w-full min-h-screen bg-[#0a0702] text-white font-mono overflow-hidden py-20 px-6">
 
+      {/* Floating neon background effects */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(252,211,77,0.10),transparent_70%)]"></div>
-        <div className="absolute top-10 left-0 w-72 h-72 bg-yellow-500/10 blur-[120px]"></div>
-        <div className="absolute bottom-10 right-0 w-96 h-96 bg-orange-500/10 blur-[150px]"></div>
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-80 h-80 bg-blue-400/5 blur-[200px]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(252,211,77,0.08),transparent_70%)]"></div>
+        <div className="absolute top-10 left-0 w-72 h-72 bg-yellow-500/10 blur-[120px] animate-pulse-slow"></div>
+        <div className="absolute bottom-10 right-0 w-96 h-96 bg-orange-500/10 blur-[150px] animate-pulse-slow"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-80 h-80 bg-blue-400/5 blur-[200px] animate-pulse-slow"></div>
       </div>
 
+      {/* Decorative borders */}
       <div className="absolute top-20 left-6 w-28 h-28 border border-orange-500/20 rounded-2xl rotate-12 animate-pulse-slow" />
       <div className="absolute bottom-24 right-6 w-16 h-16 border border-blue-400/20 rounded-xl -rotate-12 animate-pulse-slow" />
       <div className="absolute top-1/2 left-10 w-14 h-14 border border-white/10 rounded-lg rotate-6" />
       <div className="absolute top-1/3 right-10 w-28 h-10 border border-pink-400/10 rounded-xl -rotate-6" />
 
-
-      <h1 className="text-center text-4xl md:text-5xl font-bold text-orange-500 relative z-10">My Projects</h1>
+      {/* Page Title */}
+      <h1 className="text-center text-5xl font-bold text-orange-500 relative z-10">My Projects</h1>
       <p className="text-center text-gray-300 mt-3 mb-12 max-w-2xl mx-auto relative z-10">
         A curated list of digital creations — blending function, aesthetics, and performance.
       </p>
 
-
+      {/* Projects grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 relative z-10 max-w-7xl mx-auto">
         {projects.map((p, i) => (
           <div
             key={i}
-            className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-lg shadow-xl hover:scale-[1.05] hover:border-orange-500/40 transition-all duration-500 group"
+            className="bg-[#252526]/60 border border-white/10 rounded-2xl p-5 backdrop-blur-md shadow-xl hover:scale-[1.05] hover:border-orange-500/40 transition-all duration-500 group"
           >
             <div className="w-full h-48 overflow-hidden rounded-xl mb-4">
               <img
                 src={p.img}
-                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-2000"
-                 draggable={false}
-                onContextMenu={e => e.preventDefault()}
+                alt={p.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-2000"
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
                 style={{
                   userSelect: "none",
                   WebkitUserDrag: "none",
                   WebkitUserSelect: "none",
                   MozUserSelect: "none",
-                  msUserSelect: "none"
+                  msUserSelect: "none",
                 }}
               />
             </div>
 
             <h2 className="text-xl font-bold text-orange-400">{p.title}</h2>
-
             <p className="text-gray-300 text-sm mt-2">{p.desc}</p>
 
             <div className="flex flex-wrap gap-2 mt-4">
@@ -80,19 +81,19 @@ const Projects = () => {
               ))}
             </div>
 
-            
             <div className="flex gap-4 mt-6">
               <a
                 href={p.live}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex-1 text-center px-6 py-3 bg-orange-500 text-black font-semibold rounded-xl shadow-lg border-2 border-orange-500 transition-all duration-200 hover:bg-black hover:text-yellow-400 hover:border-yellow-400 hover:scale-110 flex items-center justify-center"
               >
                 Live
               </a>
-
               <a
                 href={p.code}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex-1 text-center px-6 py-3 bg-black text-yellow-400 font-semibold rounded-xl border-2 border-yellow-400 transition-all duration-200 hover:bg-orange-500 hover:text-black hover:border-orange-500 hover:scale-110 flex items-center justify-center"
               >
                 Code
@@ -105,6 +106,4 @@ const Projects = () => {
       <div className="h-16" />
     </div>
   );
-};
-
-export default Projects;
+}

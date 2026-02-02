@@ -1,91 +1,57 @@
-import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import React from "react";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-function Footer() {
+export default function Footer() {
   return (
-    <footer
-      className="
-        bg-black 
-        backdrop-blur-xl 
-        border-t border-white/10
-        text-white 
-        py-4
-      "
-    >
-      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
+    <footer className="bg-[#1e1e1e] border-t border-[#333] font-mono">
+      <div className="max-w-7xl mx-auto px-4 h-10 flex items-center justify-between text-xs text-[#cccccc]">
 
-        <div
-          className="
-            flex flex-row 
-            justify-center 
-            items-center 
-            gap-6
-            flex-wrap
-            w-full
-          "
-        >
+        {/* LEFT — STATUS */}
+        <div className="flex items-center gap-4">
+          <span className="text-[#6a9955]"> main</span>
+          <span className="hidden sm:inline text-[#858585]">
+            Portfolio Workspace
+          </span>
+        </div>
 
-        
+        {/* CENTER — LINKS */}
+        <div className="flex items-center gap-4">
           <a
             href="https://github.com/HimanshuKumarShahi"
             target="_blank"
             rel="noopener noreferrer"
-            className="
-              flex items-center gap-2 
-              font-semibold 
-              transition-all duration-300 
-              hover:text-orange-500 
-              hover:scale-110
-              whitespace-nowrap
-            "
+            className="flex items-center gap-1 hover:text-white"
           >
-            <FaGithub size={22} />
-            GitHub
+            <FaGithub />
+            <span className="hidden sm:inline">GitHub</span>
           </a>
 
           <a
             href="https://www.linkedin.com/in/himanshu-kumar-s-a434372b7"
             target="_blank"
             rel="noopener noreferrer"
-            className="
-              flex items-center gap-2 
-              font-semibold 
-              transition-all duration-300 
-              hover:text-orange-500 
-              hover:scale-110
-              whitespace-nowrap
-            "
+            className="flex items-center gap-1 hover:text-white"
           >
-            <FaLinkedin size={22} />
-            LinkedIn
+            <FaLinkedin />
+            <span className="hidden sm:inline">LinkedIn</span>
           </a>
 
-         
           <Link
             to="/contact"
-            className="
-              flex items-center gap-2 
-              font-semibold 
-              transition-all duration-300 
-              hover:text-orange-500 
-              hover:scale-110
-              whitespace-nowrap
-            "
+            className="flex items-center gap-1 hover:text-white"
           >
-            <FaEnvelope size={22} />
-            Contact
+            <FaEnvelope />
+            <span className="hidden sm:inline">Contact</span>
           </Link>
-
         </div>
 
-       
-        <p className="text-sm text-gray-400 mt-3 text-center">
-          © {new Date().getFullYear()} HIMANSHU KUMAR SHAHI. Created with 💖😎
-        </p>
+        {/* RIGHT — META */}
+        <div className="flex items-center gap-3 text-[#858585]">
+          <span className="hidden sm:inline">UTF-8</span>
+          <span>{new Date().getFullYear()}</span>
+        </div>
       </div>
     </footer>
   );
 }
-
-export default Footer;

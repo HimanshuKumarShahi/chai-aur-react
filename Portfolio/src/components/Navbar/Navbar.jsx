@@ -1,191 +1,115 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { FaHome, FaUserAlt, FaFolderOpen, FaEnvelope } from "react-icons/fa";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  FaHome,
+  FaUserAlt,
+  FaFolderOpen,
+  FaEnvelope,
+} from "react-icons/fa";
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef(null);
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
 
-  useEffect(() => {
-    function handleClickOutside(e) {
-      if (isOpen && menuRef.current && !menuRef.current.contains(e.target)) {
-        setIsOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isOpen]);
-
-  const closeMenu = () => setIsOpen(false);
+  const navItems = [
+    { to: "/", label: "home.jsx", icon: <FaHome /> },
+    { to: "/about", label: "about.jsx", icon: <FaUserAlt /> },
+    { to: "/projects", label: "projects.jsx", icon: <FaFolderOpen /> },
+    { to: "/contact", label: "contact.jsx", icon: <FaEnvelope /> },
+  ];
 
   return (
-    <nav
-      className="
-        fixed top-0 w-full z-50 
-        bg-black/30 backdrop-blur-xl 
-        shadow-xl 
-        border-b border-white/10
-      "
-    >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link
-          to="/"
-          onClick={closeMenu}
-          className="text-2xl font-bold text-orange-400 drop-shadow-sm"
-        >
-          Himanshu Portfolio
-        </Link>
-
-  
-        <div className="hidden md:flex gap-8">
+    <>
+      {/* TOP BAR */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#1e1e1e] border-b border-[#333] font-mono">
+        <div className="max-w-7xl mx-auto px-4 h-11 flex items-center justify-between gap-3">
+          
+          {/* TITLE (VISIBLE ON ALL SCREENS) */}
           <Link
             to="/"
-            className="flex items-center gap-2 font-semibold text-white 
-              transition-all duration-300 transform
-              hover:text-orange-500 hover:scale-125"
-          >
-            <FaHome />
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="flex items-center gap-2 font-semibold text-white 
-              transition-all duration-300 transform
-              hover:text-orange-500 hover:scale-125"
-          >
-            <FaUserAlt />
-            About
-          </Link>
-          <Link
-            to="/projects"
-            className="flex items-center gap-2 font-semibold text-white 
-              transition-all duration-300 transform
-              hover:text-orange-500 hover:scale-125"
-          >
-            <FaFolderOpen />
-            Projects
-          </Link>
-          <Link
-            to="/contact"
-            className="flex items-center gap-2 font-semibold text-white 
-              transition-all duration-300 transform
-              hover:text-orange-500 hover:scale-125"
-          >
-            <FaEnvelope />
-            Contact-Us
-          </Link>
-        </div>
-
-
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen((prev) => !prev)}
-            className="focus:outline-none text-white"
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-          >
-            {isOpen ? (
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
-      </div>
-
-
-      {isOpen && (
-        <div className="md:hidden">
-         
-          <div
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
-            onClick={closeMenu}
-          />
-
-          
-          <div
-            ref={menuRef}
             className="
-              absolute top-full left-0 w-full
-              bg-black/90 backdrop-blur-xl 
-              shadow-lg border-t border-white/10 
-              flex flex-col 
-              items-center 
-              gap-4 
-              px-6 py-6 
-              rounded-b-xl 
-              animate-slideDown
-              z-50
+              flex items-center gap-2
+              text-[#cccccc] text-sm
+              max-w-[70%]
+              truncate
             "
           >
-            <Link
-              onClick={closeMenu}
-              to="/"
-              className="flex items-center gap-2 text-white text-lg font-medium
-                transition-all duration-300 transform 
-                hover:text-orange-400 hover:scale-110"
+            <span className="text-[#007acc] font-bold"></span>
+            <span className="truncate">
+              himanshu_portfolio
+            </span>
+          </Link>
+
+          {/* DESKTOP NAV */}
+          <div className="hidden md:flex items-center gap-1 text-xs">
+            {navItems.map((item) => {
+              const active = pathname === item.to;
+              return (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className={`
+                    flex items-center gap-2 px-3 py-1.5
+                    border-b-2
+                    ${
+                      active
+                        ? "border-[#007acc] text-white bg-[#252526]"
+                        : "border-transparent text-[#858585] hover:text-white"
+                    }
+                  `}
+                >
+                  {item.icon}
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* MOBILE COMMAND BUTTON */}
+          <button
+            onClick={() => setOpen(true)}
+            className="md:hidden text-[#cccccc] text-lg"
+            aria-label="Open Command Palette"
+          >
+            ⌘
+          </button>
+        </div>
+      </nav>
+
+      {/* MOBILE COMMAND PALETTE */}
+      {open && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm">
+          <div className="max-w-md mx-auto mt-24 bg-[#252526] border border-[#333] rounded-lg shadow-xl font-mono">
+            <div className="px-4 py-2 text-xs text-[#858585] border-b border-[#333]">
+              &gt; Go to file
+            </div>
+
+            <div className="flex flex-col">
+              {navItems.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="flex items-center gap-3 px-4 py-3 text-sm text-[#d4d4d4] hover:bg-[#373737]"
+                >
+                  <span className="text-[#007acc]">{item.icon}</span>
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setOpen(false)}
+              className="w-full text-xs text-[#858585] py-2 border-t border-[#333] hover:bg-[#1e1e1e]"
             >
-              <FaHome />
-              Home
-            </Link>
-            <Link
-              onClick={closeMenu}
-              to="/about"
-              className="flex items-center gap-2 text-white text-lg font-medium
-                transition-all duration-300 transform 
-                hover:text-orange-400 hover:scale-110"
-            >
-              <FaUserAlt />
-              About
-            </Link>
-            <Link
-              onClick={closeMenu}
-              to="/projects"
-              className="flex items-center gap-2 text-white text-lg font-medium
-                transition-all duration-300 transform 
-                hover:text-orange-400 hover:scale-110"
-            >
-              <FaFolderOpen />
-              Projects
-            </Link>
-            <Link
-              onClick={closeMenu}
-              to="/contact"
-              className="flex items-center gap-2 text-white text-lg font-medium
-                transition-all duration-300 transform 
-                hover:text-orange-400 hover:scale-110"
-            >
-              <FaEnvelope />
-              Contact-Us
-            </Link>
+              Esc
+            </button>
           </div>
         </div>
       )}
-    </nav>
+
+      {/* SPACER */}
+      <div className="h-11" />
+    </>
   );
 }
-
-export default Navbar;
