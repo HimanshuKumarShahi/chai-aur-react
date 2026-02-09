@@ -14,7 +14,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Create Course (Only logged in users)
 router.post("/", protect, async (req, res) => {
   const { title, description, price, thumbnail } = req.body;
 
