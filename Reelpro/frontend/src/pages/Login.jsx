@@ -88,6 +88,11 @@ function Login() {
           Login
         </button>
 
+        <p className="text-sm mt-4">
+  Don't have an account? <a href="/register" className="text-blue-600 hover:underline">Register</a> | 
+  <a href="/forgot-password" className="text-blue-600 hover:underline ml-2">Forgot Password?</a>
+</p>
+
       </form>
 
     </div>

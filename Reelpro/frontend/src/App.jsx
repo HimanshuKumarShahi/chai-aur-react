@@ -11,6 +11,7 @@ import Upload from "./pages/Upload";
 
 import Navbar from "./components/Navbar";
 import { AuthContext } from "./context/AuthContext";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   const { token } = useContext(AuthContext);
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Navigate to="/register" />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
 
         <Route path="/feed" element={token ? <Feed /> : <Navigate to="/login" />} />
         <Route path="/profile" element={token ? <Profile /> : <Navigate to="/login" />} />
