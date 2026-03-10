@@ -6,70 +6,67 @@ function Register() {
 
   const navigate = useNavigate();
 
-  const [data, setData] = useState({
-    username: "",
-    email: "",
-    password: ""
+  const [data,setData]=useState({
+    username:"",
+    email:"",
+    password:""
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit=async(e)=>{
 
     e.preventDefault();
 
-    try {
+    await API.post("/auth/register",data);
 
-      await API.post("/auth/register", data);
+    navigate("/login");
 
-      alert("Registration successful");
-
-      // redirect to login page
-      navigate("/login");
-
-    } catch (error) {
-      alert("Registration failed");
-    }
   };
 
-  return (
-    <div>
+  return(
 
-      <h2>Register</h2>
+    <div className="flex items-center justify-center h-screen bg-gray-100">
 
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white p-8 rounded shadow-md w-80"
+      >
+
+        <h2 className="text-2xl font-bold mb-6 text-center">
+          Register
+        </h2>
 
         <input
-          placeholder="username"
-          onChange={(e) =>
-            setData({ ...data, username: e.target.value })
-          }
+          className="border p-2 w-full mb-4"
+          placeholder="Username"
+          onChange={(e)=>setData({...data,username:e.target.value})}
         />
 
         <input
+          className="border p-2 w-full mb-4"
+          placeholder="Email"
           type="email"
-          placeholder="email"
-          onChange={(e) =>
-            setData({ ...data, email: e.target.value })
-          }
+          onChange={(e)=>setData({...data,email:e.target.value})}
         />
 
         <input
+          className="border p-2 w-full mb-4"
+          placeholder="Password"
           type="password"
-          placeholder="password"
-          onChange={(e) =>
-            setData({ ...data, password: e.target.value })
-          }
+          onChange={(e)=>setData({...data,password:e.target.value})}
         />
 
-        <button type="submit">Register</button>
+        <button
+          className="bg-blue-500 text-white w-full p-2 rounded"
+        >
+          Register
+        </button>
 
       </form>
 
-      <p>
-        Already have an account? <a href="/login">Login</a>
-      </p>
-
     </div>
+
   );
+
 }
 
 export default Register;
