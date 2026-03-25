@@ -24,14 +24,19 @@ export async function solveMath(imagePath) {
           },
           {
             text: `
-Extract the question.
+Solve the problem.
 
-Give:
-- Final Answer
-- 1–2 short steps only
+Return format:
 
-No long explanation.
-Keep response under 5 lines.
+Final Answer: <value>
+
+Steps:
+1. ...
+2. ...
+3. ...
+
+Use plain text only.
+Max 4 steps.
 `,
           },
         ],
