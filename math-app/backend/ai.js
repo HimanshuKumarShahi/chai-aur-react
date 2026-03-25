@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import { GoogleGenAI } from "@google/genai";
 import fs from "fs";
 
@@ -22,9 +24,14 @@ export async function solveMath(imagePath) {
           },
           {
             text: `
-Extract the questions.
-Solve step by step.
-Explain simply.
+Extract the question.
+
+Give:
+- Final Answer
+- 1–2 short steps only
+
+No long explanation.
+Keep response under 5 lines.
 `,
           },
         ],

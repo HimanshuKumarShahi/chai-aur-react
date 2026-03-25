@@ -28,7 +28,7 @@ export default function HomeScreen() {
 
     try {
       const res = await axios.post(
-        "http://10.247.208.64/solve",
+        "http://10.247.208.64:5000/solve",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
