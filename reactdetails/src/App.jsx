@@ -1,10 +1,11 @@
-import Navbar from "./components/navbar"
+import Navbar from "./components/navbar.jsx"
+import Products from "./functionality/product.jsx"
 
 export default function App() {
   return (
     <>
     <Navbar />
-    <div>App</div>
+    <Products />
     </>
   )
 }
