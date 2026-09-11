@@ -28,9 +28,6 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-1 bg-slate-100/60 p-1 rounded-full border border-slate-200/60 shadow-inner">
           
          
-            <NavLink to="/" className={navLinkStyle}>
-              Users
-            </NavLink>
             
             <NavLink to="/products" className={navLinkStyle}>
               Products
@@ -40,8 +37,16 @@ export default function Navbar() {
               About
             </NavLink>
             
+            <NavLink to="/" className={navLinkStyle}>
+              Users
+            </NavLink>
+            
             <NavLink to="/journal" className={navLinkStyle}>
               Journal
+            </NavLink>
+
+            <NavLink to="/playground" className={navLinkStyle}>
+              playground
             </NavLink>
           </div>
 
