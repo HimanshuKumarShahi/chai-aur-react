@@ -13,9 +13,9 @@ export default function App() {
       <Navbar />
       
       <Routes>
-        <Route path="/" element={<RandomUsersfromAPI />} /> 
+        <Route path="/" element={<About />} /> 
         <Route path="/products" element={<Products />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<RandomUsersfromAPI />} />
         <Route path="/journal" element={<Journal />} />
         <Route path="/playground" element={<ReactPlayground />} />
       </Routes>
