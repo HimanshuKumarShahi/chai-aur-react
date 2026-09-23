@@ -1,45 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "../src/index.css"
 
 function App() {
- let [counter,setcount]= useState(10)
+  let [counter, setcounter] = useState(1);
 
- 
-const addnumber=()=>{
-  if(counter<20){
-    setcount(counter+1);
-  }
-  else{
-    alert("Max value : 20")
-  }
-};
+  // Here use usestate to update ui in project at multiple level .
 
-const removenumber=()=>{
-  if(counter>0){
-    setcount(counter-1)
-  }
-  else{
-    alert("Min value : 0")
-  }
-}
+  const addnumber = () => {
+    if (counter < 20) {
+      setcounter(counter + 1);
+    } else {
+      alert("Max value : 20");
+    }
+  };
+
+  const removenumber = () => {
+    if (counter > 0) {
+      setcounter(counter - 1);
+    } else {
+      alert("Min value : 0");
+    }
+  };
 
   return (
-    <>
-      <h1>Chai Aur React </h1>
-      <h2>Counter : {counter}  </h2>
-      <button
-      onClick={addnumber}
-      >Add value:{counter}</button>
-      <br />
-      <button
-      onClick={removenumber}
-      >Remove value :{counter}</button>
+    <main className="container">
+      <div className="card">
+        <h1 className="title">Chai Aur React</h1>
+        <p className="subtitle">Interactive Counter</p>
 
-      <footer>{counter}</footer>
-    </>
-  )
+        <div className="counter-display">
+          <span className="count">{counter}</span>
+        </div>
+
+        <div className="button-group">
+          <button className="btn btn-add" onClick={addnumber}>
+            + Add
+          </button>
+          <button className="btn btn-remove" onClick={removenumber}>
+            - Remove
+          </button>
+        </div>
+
+        <footer className="footer">Current count: {counter}</footer>
+      </div>
+    </main>
+  );
 }
 
-export default App
+export default App;
