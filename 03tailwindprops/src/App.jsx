@@ -15,9 +15,11 @@ function App() {
       <h1 className="bg-blue-400 text-black p-4 rounded-xl">Tailwind test</h1>
       {/* <Dashboard /> */}
       <br />
+      <div className="flex gap-3 w-auto">
       <Card username="HIMNASHU" btntext="View Here" />
       <Card username="Hitesh Choudhary " btntext="Click Me" />
       <Card username="Hitesh Choudhary " btntex="Click Me" />
+      </div>
     </>
   );
 }
