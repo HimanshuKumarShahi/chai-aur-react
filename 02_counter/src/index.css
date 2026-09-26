@@ -30,7 +30,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 2rem;
   width: 100%;
 }
 
@@ -42,7 +42,7 @@ body {
   border-radius: 1.25rem;
   padding: 2.5rem 2rem;
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
   text-align: center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
@@ -63,41 +63,41 @@ body {
 }
 
 .counter-display {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(5, 70, 220, 0.6);
   border: 1px solid var(--card-border);
   border-radius: 1rem;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .count {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: #38bdf8;
-  line-height: 1;
+  font-size: 4rem;
+  font-weight: 600;
+  color: #010507;
+  line-height: 2;
 }
 
 .button-group {
   display: flex;
-  gap: 1rem;
+  gap: 4rem;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .btn {
   flex: 1;
-  padding: 0.75rem 1rem;
+  padding: 0.8rem 1rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
   color: #ffffff;
 }
 
 .btn:active {
-  transform: scale(0.96);
+  transform: scale(1);
 }
 
 .btn-add {
@@ -117,8 +117,8 @@ body {
 }
 
 .footer {
-  font-size: 0.875rem;
+  font-size: 1.3rem;
   color: var(--text-secondary);
   border-top: 1px solid var(--card-border);
-  padding-top: 1rem;
+  padding-top: 1.2rem;
 }

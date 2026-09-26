@@ -4,7 +4,7 @@ import "../src/index.css"
 function App() {
   let [counter, setcounter] = useState(1);
 
-  // Here use usestate to update ui in project at multiple level .
+  // Here use usestate to update ui in project at multiple level .not even numbers all things like images , books , etc
 
   const addnumber = () => {
     if (counter < 20) {
@@ -34,10 +34,10 @@ function App() {
 
         <div className="button-group">
           <button className="btn btn-add" onClick={addnumber}>
-            + Add
+            + Add Value
           </button>
           <button className="btn btn-remove" onClick={removenumber}>
-            - Remove
+            - Remove Vlaue
           </button>
         </div>
 
