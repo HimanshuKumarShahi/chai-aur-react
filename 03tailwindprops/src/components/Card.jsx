@@ -1,8 +1,4 @@
-import React from 'react'
-
-function Card({username,btntext="Visit Me"}) {
-    console.log(username,btntext);
-    
+function Card({ username, btntext = "Visit Me" }) {
   return (
     <div className="md:max-w-sm w-full p-6 rounded-xl shadow-xl bg-black border border-zinc-800 hover:border-white transition-all duration-300 hover:transform hover:scale-105 group">
       <div className="relative overflow-hidden rounded-lg mb-6">
@@ -18,7 +14,7 @@ function Card({username,btntext="Visit Me"}) {
         <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase bg-white text-black rounded-full mb-3">
           Featured
         </span>
-           <h3 className='text-white'>{username}</h3>
+        <h3 className="text-white">{username}</h3>
         <h2 className="text-xl font-bold text-white mb-2 group-hover:text-gray-300 transition-colors duration-200">
           Modern Design Solutions
         </h2>
@@ -42,13 +38,11 @@ function Card({username,btntext="Visit Me"}) {
               clipRule="evenodd"
             />
           </svg>
-          <span>54M views</span>
+          <span>51M views</span>
         </div>
       </div>
     </div>
   );
 }
 
-
-
-export default Card
+export default Card;
