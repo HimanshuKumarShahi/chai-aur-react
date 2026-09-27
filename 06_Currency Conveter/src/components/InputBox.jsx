@@ -1,4 +1,4 @@
-import React,{useId} from "react";
+import React, { useId } from "react";
 
 function InputBox({
   label,
@@ -12,14 +12,21 @@ function InputBox({
   className = "",
 }) {
 
-  const amountInputId=useId()
+  // The useId hook in generates stable, unique IDs for accessibility attributes (like htmlFor and id) that remain consistent between server-side rendering and client hydration, preventing mismatches.
+
+  const amountInputId = useId();
 
   return (
     <div className={`bg-white p-3 rounded-lg text-sm flex ${className} `}>
       <div className="w-1/2">
-        <label htmlFor={amountInputId} className="text-black/40 mb-2 inline-block">{label}</label>
+        <label
+          htmlFor={amountInputId} //Binding here
+          className="text-black/40 mb-2 inline-block"
+        >
+          {label}
+        </label>
         <input
-          id={amountInputId}
+          id={amountInputId} //Binding here also 
           className="outline-none w-full bg-transparent py-1.5"
           type="number"
           placeholder="Amount"
@@ -38,6 +45,7 @@ function InputBox({
           onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
           disabled={currencyDisable}
         >
+          {/* Remember the key in loops , .map , etc */}
           {CurrencyOptions.map((currency) => (
             <option key={currency} value={currency}>
               {currency}
