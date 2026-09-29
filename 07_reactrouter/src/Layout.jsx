@@ -7,6 +7,7 @@ function Layout() {
   return (
     <>
       <Header />
+      {/* Renders the matching child route of a parent route or nothing if no child route matches. */}
       <Outlet />
       <Footer />
     </>
