@@ -22,7 +22,7 @@ function App() {
   return (
     <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
       <>
-        <div className="flex flex-wrap min-h-screen items-center">
+        <div className="flex flex-wrap min-h-screen items-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-150">
           <div className="w-full">
             <div className="w-full max-w-sm mx-auto flex justify-end mb-4">
               <ThemeBtn />
